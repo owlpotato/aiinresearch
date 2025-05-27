@@ -1,5 +1,9 @@
 class TestAPI:
-    def __init__(self, name):
+    def __init__(self, variable, name):
         self.name = name
-        #nothing
+        self.variable = variable
 
+    def __eq__(self, other):
+        return self.variable == other.variable
+
+##nothing
