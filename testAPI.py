@@ -1,2 +1,4 @@
-print("hello world")
-print("you can see the change")
+class TestAPI:
+    def __init__(self, name):
+        self.name = name
+
