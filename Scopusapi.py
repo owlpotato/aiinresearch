@@ -6,7 +6,7 @@ BaseUrl="https://api.elsevier.com/content/search/scopus"
 
 
 params = {
-    "query": "TITLE-ABS-KEY(artificial intelligence)",
+    "query": "TITLE-ABS-KEY(carbon capture)",
     "apiKey": API_Key,
     "count": 5,
     "start": 0
