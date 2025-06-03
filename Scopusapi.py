@@ -21,9 +21,17 @@ if response.status_code == 200:
     data = response.json()
     for entry in data.get("search-results", {}).get("entry", []):
         print("Titel:", entry.get("dc:title"))
+    
         print("Autoren:", entry.get("dc:creator"))
         print("DOI:", entry.get("prism:doi"))
         print("Erscheinungsjahr:", entry.get("prism:coverDate"))
+        print("Abstract:", entry.get("dc:description"))
+        print("Link:", entry.get("link", [{}])[0].get("@href"))
+        print("Affiliationen:", entry.get("affiliation", [{}])[0].get("affilname"))
+        print("ISSN:", entry.get("prism:issn"))
+        print("Scopus-ID:", entry.get("dc:identifier"))
+        print("Cited by:", entry.get("citedby-count"))
+        print("URL:", entry.get("link", [{}])[1].get("@href"))
         print("---")
 else:
     print("Fehler:", response.status_code)
