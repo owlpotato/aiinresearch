@@ -6,7 +6,7 @@ BaseUrl="https://api.elsevier.com/content/search/scopus"
 
 
 params = {
-    "query": "TITLE-ABS-KEY(carbon capture)",
+    "query": "TITLE-ABS-KEY(The effect of taxes on the economy)",
     "apiKey": API_Key,
     "count": 5,
     "start": 0
@@ -32,7 +32,7 @@ if response.status_code == 200:
         print("Scopus-ID:", entry.get("dc:identifier"))
         print("Cited by:", entry.get("citedby-count"))
         print("URL:", entry.get("link", [{}])[1].get("@href"))
-        print("---")
+        print("Jurnal:", entry.get("prism:publicationName"))
 else:
     print("Fehler:", response.status_code)
     print(response.text)
