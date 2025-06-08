@@ -1,8 +1,9 @@
 # services/scopus_service.py
 # Scopus-API-Abfrage mit Fehlerbehandlung
-
+import os
 from datetime import date
 import requests
+from dotenv import load_dotenv
 
 from backend.services.PaperRestService import PaperRestService
 from backend.models.PaperDTO import PaperDTO
@@ -11,7 +12,8 @@ from backend.models.PaperDTO import PaperDTO
 class ScopusService(PaperRestService):
 
     def __init__(self):
-        self.api_key = ''
+        load_dotenv()
+        self.api_key = os.getenv('SCOPUS.APIKEY')
         self.base_url = "https://api.elsevier.com/content/search/scopus"
 
     def query(self, search_term: str) -> list[PaperDTO]:

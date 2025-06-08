@@ -1,16 +1,22 @@
 # services/wos_service.py
 # Web of Science API-Anbindung (nur wenn API-Zugang vorhanden)
 
-from datetime import date
+
 import requests
+import os
+from datetime import date
 from backend.services.PaperRestService import PaperRestService
 from backend.models.PaperDTO import PaperDTO
+from dotenv import load_dotenv
+
 
 
 class WOSService(PaperRestService):
     def __init__(self):
-        self.api_key = ''
+        load_dotenv()
+        self.api_key = os.getenv('WOS_API_KEY')
         self.base_url = "https://api.clarivate.com/api/wos"
+
 
     def query(self, search_term: str) -> list[PaperDTO]:
         headers = {'X-ApiKey': self.api_key, 'Accept': 'application/json'}
