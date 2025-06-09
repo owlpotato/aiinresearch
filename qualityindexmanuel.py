@@ -1,6 +1,4 @@
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import classification_report, confusion_matrix
-from sklearn.model_selection import train_test_split
+import pandas as pd
 
 class qualityindex:
     def __init__(self, h_index, recency, number_of_citations, journal_impact):
@@ -33,8 +31,19 @@ class qualityindex:
         if recency > recency_para:
             return f"recency error"
 
-##below is some feedback i got from gemini on how to make a decisiontree with sklearn, i have to look into it more
+    def accuracy_quality_index
+        return metrics.accuracy_score(y_test, y_pred))
+    
+
+##below is some feedback I got from gemini on how to make a decisiontree with sklearn, I have to look into it more
 from sklearn.tree import DecisionTreeClassifier
 clf = DecisionTreeClassifier(max_depth=4)
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
+
+
+##from datacamp
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
+from sklearn.model_selection import train_test_split # Import train_test_split function
+from sklearn import metrics
