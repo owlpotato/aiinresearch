@@ -33,4 +33,8 @@ class qualityindex:
         if recency > recency_para:
             return f"recency error"
 
-##nothing
+##below is some feedback i got from gemini on how to make a decisiontree with sklearn, i have to look into it more
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier(max_depth=4)
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
