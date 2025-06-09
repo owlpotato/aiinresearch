@@ -1,0 +1,1 @@
+## the code of how to read to collect the 4 features (parameters) from the page to then run qualityindex.predict_quality() will be written here.

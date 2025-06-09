@@ -11,7 +11,7 @@ class qualityindex:
         self.recency_para = 5 ##less than or equal to 5 years
         self.journal_impact_para = 2##more than or equal to
 
-    def update_h_index(self, bool):
+    def update_h_index(self, bool): 
         if bool == true
             
     def update_h_index(self, bool):
@@ -31,19 +31,5 @@ class qualityindex:
         if recency > recency_para:
             return f"recency error"
 
-    def accuracy_quality_index
-        return metrics.accuracy_score(y_test, y_pred))
+##stopped brainstorming after looking reading more into topic, remade the decision tree with skllearn
     
-
-##below is some feedback I got from gemini on how to make a decisiontree with sklearn, I have to look into it more
-from sklearn.tree import DecisionTreeClassifier
-clf = DecisionTreeClassifier(max_depth=4)
-clf.fit(X_train, y_train)
-y_pred = clf.predict(X_test)
-
-
-##from datacamp
-import pandas as pd
-from sklearn.tree import DecisionTreeClassifier # Import Decision Tree Classifier
-from sklearn.model_selection import train_test_split # Import train_test_split function
-from sklearn import metrics
